@@ -1679,7 +1679,7 @@ Respond ONLY with valid JSON mapping hour numbers (0-23) to {"cat": "category_id
 Example: {"7":{"cat":"sleep","note":"woke up"},"8":{"cat":"fitness","note":"morning run"}}`;
 
   try {
-    const res = await fetch('/api/claude', {
+    const res = await fetch('/.netlify/functions/claude', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 1000, messages: [{ role:'user', content: prompt }] })
@@ -1744,7 +1744,7 @@ Breakdown: ${summary}
 Give a sharp, honest, warm 3-4 sentence insight: what dominates, what's neglected, one specific actionable suggestion. Be direct like a smart friend. No bullets, no fluff.`;
 
   try {
-    const res = await fetch('/api/claude', {
+    const res = await fetch('/.netlify/functions/claude', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 1000, messages: [{ role:'user', content: prompt }] })
